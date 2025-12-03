@@ -18,7 +18,9 @@ Description
 Item Link
 
 Run
+
 pip install -r requirements.txt
+
 python olx_scraper.py "car cover" --limit 20
 
 
@@ -38,7 +40,9 @@ Find rice species with longest DNA sequence
 Pagination query (9th page, 15 results/page)
 
 Run
+
 mysql -h mysql-rfam-public.ebi.ac.uk -P 4497 -u rfamro -D Rfam
+
 SOURCE rfam_queries.sql;
 
 3. AMFI NAV Extractor (Shell Script)
@@ -49,8 +53,10 @@ Scheme Name
 
 Net Asset Value (NAV)
 
-▶ Run
+Run
+
 chmod +x amfi_extract.sh
+
 ./amfi_extract.sh examples/amfi_sample.tsv
 
 
