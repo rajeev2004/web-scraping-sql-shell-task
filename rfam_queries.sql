@@ -10,8 +10,8 @@ WHERE scientific_name LIKE '%Panthera tigris%' AND scientific_name LIKE '%sumatr
 
 
 SELECT column_name,
-       COUNT(*) AS occurrences,
-       GROUP_CONCAT(table_name) AS tables
+COUNT(*) AS occurrences,
+GROUP_CONCAT(table_name) AS tables
 FROM information_schema.columns
 WHERE table_schema = 'Rfam'
 GROUP BY column_name
@@ -21,8 +21,8 @@ ORDER BY occurrences DESC;
 
 
 SELECT t.scientific_name,
-       r.accession,
-       r.length
+r.accession,
+r.length
 FROM rfamseq r
 JOIN taxonomy t ON r.ncbi_id = t.ncbi_id
 WHERE t.scientific_name LIKE 'Oryza%'
@@ -31,8 +31,8 @@ LIMIT 1;
 
 
 SELECT f.rfam_acc,
-       f.rfam_id,
-       MAX(s.length) AS max_length
+f.rfam_id,
+MAX(s.length) AS max_length
 FROM family f
 JOIN full_region fr ON f.rfam_id = fr.rfam_id
 JOIN rfamseq s ON fr.seq_acc = s.accession
